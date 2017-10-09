@@ -1,12 +1,13 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-import { Dropdown } from './components/Dropdown';
-import { Item } from './components/Item';
+import * as css from './App.less';
 
-ReactDom.render(
-    <div>
-        <Item />
-        <Dropdown />
-    </div>,
-    document.getElementById('app')
-)
+export class App extends React.Component {
+
+    render() {
+        return (
+            <div className="container">
+                {this.props.children}
+            </div>
+        )
+    }
+};
