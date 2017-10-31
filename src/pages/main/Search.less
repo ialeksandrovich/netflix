@@ -1,0 +1,43 @@
+@import "../../less/colors";
+
+.title {
+  font-size: 15px;
+  color: @white;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.search {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #232323;
+  border: none;
+  border-bottom: 1px solid @red;
+  color: @white;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.bottom-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: @white;
+  text-transform: uppercase;
+
+  & > * {
+    margin-right: 20px;
+  }
+}

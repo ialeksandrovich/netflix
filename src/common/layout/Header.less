@@ -1,17 +1,22 @@
+@import "../../less/colors";
+
 .header {
     box-sizing: border-box;
     width: 100%;
-    padding: 15px;
-    background-color: #444;
+    padding: 20px 80px;
+    //background-color: #444;
+    background-image: url( '/static/header.jpg' );
 }
 
 .top-panel {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 .logo {
-    color: #ec6b65;
+    color: @red;
+    text-decoration: none;
 }
 
 .right-items-container {

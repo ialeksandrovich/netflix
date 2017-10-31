@@ -1,0 +1,75 @@
+@import "../../less/colors";
+
+.button {
+  border: none;
+  font-weight: bold;
+  color: @white;
+  text-transform: uppercase;
+  outline: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.size-big {
+  padding: 7px 40px;
+  font-size: 16px;
+  line-height: 36px;
+}
+
+.size-medium {
+  padding: 5px 35px;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.size-small {
+  padding: 3px 30px;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.color-light-gray {
+  background-color: @light-gray;
+  color: @medium-gray;
+
+  &:hover {
+    background-color: darken(@light-gray, 5%);
+  }
+
+  &:active {
+    background-color: darken(@light-gray, 20%);
+  }
+}
+
+.color-dark-gray {
+  background-color: @dark-gray;
+
+  &:hover {
+    background-color: darken(@dark-gray, 5%);
+  }
+
+  &:active {
+    background-color: darken(@dark-gray, 20%);
+  }
+}
+
+.color-red {
+  background-color: @red;
+
+  &:hover {
+    background-color: darken(@red, 5%);
+  }
+
+  &:active {
+    background-color: darken(@red, 20%);
+  }
+}
+
+.style-round {
+  border-radius: 5px;
+}
+
+.style-inline {
+  border: none;
+  background-color: transparent;
+}

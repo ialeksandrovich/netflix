@@ -1,6 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 
 module.exports = {
 
@@ -16,28 +17,64 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.less']
     },
 
     module: {
-        rules: [{
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    plugins: ["transform-react-jsx"],
-                    presets: ['env']
+        rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        plugins: ["transform-react-jsx"],
+                        presets: ['env']
+                    }
                 }
+            },
+            // {
+            //     test: /\.tsx?$/,
+            //     loader: "awesome-typescript-loader",
+            //     options: {
+            //         useCache: true,
+            //         //useBabel: true,
+            //         // babelCore: "/node_modules"
+            //     }
+            // },
+            {
+                test: /\.less$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                            camelCase: true,
+                            import: true,
+                            url: true
+                        }
+                    },
+                    {
+                        loader: "less-loader"
+                    }
+                ]
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]',
+                        }
+                    }
+                ]
             }
-        },
-        {
-            test: /\.less$/,
-            use: ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: ['css-loader', 'less-loader']
-            })
-        }]
+        ]
     },
 
     plugins: [
@@ -49,8 +86,14 @@ module.exports = {
         new ExtractTextPlugin({
             filename: 'style.css',
             allChunks: true
-        })
+        }),
+        new CheckerPlugin()
     ],
+
+    // externals: {
+    //     "react": "React",
+    //     "react-dom": "ReactDom"
+    // },
 
     devServer: {
         contentBase: path.join(__dirname, "dist"),
