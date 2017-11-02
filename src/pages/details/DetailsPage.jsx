@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 export const DetailsPage = () => {
     return (
         <Page>
-            <Header rightItems={ [<Link to="/"><Button color="light-gray" caption="Search"/></Link>] }>
+            <Header rightItems={ [<Link key="Search" to="/"><Button color="light-gray" caption="Search"/></Link>] }>
                 <FilmDetails/>
             </Header>
             <Content>

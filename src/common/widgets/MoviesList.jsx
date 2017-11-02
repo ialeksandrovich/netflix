@@ -7,7 +7,7 @@ export const MoviesList = (props) => {
         <div className={ props.movies ? css.container : css.emptyContainer }>
             {
                 props.movies ?
-                    props.movies.results.map((movie) => <MovieItem movie={ movie }/>) :
+                    props.movies.results.map((movie) => <MovieItem key={ movie.id } movie={ movie }/>) :
                     'No films found'
             }
         </div>
