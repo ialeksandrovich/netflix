@@ -45,11 +45,19 @@
   background-color: @dark-gray;
 
   &:hover {
-    background-color: darken(@dark-gray, 5%);
+    background-color: darken(@red, 5%);
   }
 
   &:active {
-    background-color: darken(@dark-gray, 20%);
+    background-color: darken(@red, 20%);
+  }
+
+  &.active {
+    background-color: darken(@red, 5%);
+  }
+
+  &.active:active {
+    background-color: darken(@red, 20%);
   }
 }
 
@@ -72,4 +80,38 @@
 .style-inline {
   border: none;
   background-color: transparent;
+  padding: 3px 10px;
+
+  &.color-dark-gray {
+    color: @dark-gray;
+    text-transform: none;
+
+    &:hover {
+      color: darken(@red, 5%);
+      background-color: transparent;
+    }
+
+    &:active {
+      background-color: transparent;
+    }
+
+    &.active {
+      color: darken(@red, 5%);
+      background-color: transparent;
+    }
+
+    &.size-big {
+      line-height: 16px;
+    }
+
+    &.size-medium {
+      line-height: 14px;
+    }
+
+    &.size-small {
+      line-height: 12px;
+    }
+  }
+
+
 }

@@ -28,10 +28,15 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        plugins: ["transform-react-jsx"],
+                        plugins: ["transform-react-jsx", "transform-object-rest-spread"],
                         presets: ['env']
                     }
                 }
+            },
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                loaders: ['babel-loader', 'ts-loader'],
             },
             // {
             //     test: /\.tsx?$/,

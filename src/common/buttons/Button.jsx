@@ -8,10 +8,10 @@ export const Button = (props) => {
         <div
             className={ cx(
                 css.button,
-                css['size-medium'],
                 css['size-' + props.size],
                 css['color-' + props.color],
                 css['style-' + props.style],
+                props.active && css.active
             ) }
             onClick={ props.onClick }>{ props.caption }
         </div>
