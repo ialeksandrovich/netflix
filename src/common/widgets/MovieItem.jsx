@@ -1,9 +1,9 @@
 import React from 'react';
-import * as css from './MovieItem.less';
+import css from './MovieItem.less';
 import { withRouter } from 'react-router';
 import { SMALL_IMAGE_BASE_URL } from '../../api/api';
 
-class MovieItem extends React.Component {
+export class MovieItem extends React.Component {
     constructor(props) {
         super(props);
         this.getMovieDetails = this.getMovieDetails.bind(this);
@@ -13,7 +13,7 @@ class MovieItem extends React.Component {
         e.preventDefault();
         this.props.getMovieDetails(this.props.movie.id);
         this.props.history.push(`/film?id=${this.props.movie.id}&value=${this.props.searchValue}&search_by=${this.props.searchBy}&sort_by=${this.props.sortBy}`);
-        window.scrollTo(0,0);
+        // window.scrollTo(0,0);
     }
 
     render() {
@@ -33,4 +33,4 @@ class MovieItem extends React.Component {
     }
 }
 
-export const MovieItemWithRouter = withRouter(MovieItem);
+export default withRouter(MovieItem);

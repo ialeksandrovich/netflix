@@ -1,6 +1,6 @@
 import React from 'react';
-import * as css from './MoviesList.less';
-import { MovieItemWithRouter } from "./MovieItem";
+import css from './MoviesList.less';
+import MovieItemWithRouter from "./MovieItem";
 
 export const MoviesList = (props) => {
     return (

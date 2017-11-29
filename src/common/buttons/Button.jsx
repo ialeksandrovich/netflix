@@ -1,5 +1,5 @@
 import React from 'react';
-import * as css from './Button.less';
+import css from './Button.less';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 

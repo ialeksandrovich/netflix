@@ -1,5 +1,5 @@
 import React from 'react';
-import * as css from './Header.less';
+import css from './Header.less';
 import img from '../../static/header.jpg';
 
 

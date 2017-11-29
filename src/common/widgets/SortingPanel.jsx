@@ -1,9 +1,9 @@
 import React from 'react';
-import * as css from './SortingPanel.less';
+import css from './SortingPanel.less';
 import { Button } from '../buttons/Button';
 import { withRouter } from 'react-router';
 
-class SortingPanel extends React.Component {
+export class SortingPanel extends React.Component {
     handleChangeSearchBy(sortBy) {
         this.props.changeSortBy(sortBy);
         if (this.props.searchValue) {
