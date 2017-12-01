@@ -12,8 +12,8 @@ module.exports = {
     },
 
     output: {
-        path: path.join(__dirname, "built"),
-        filename: '[name].js'
+        path: path.resolve('./built/js/'),
+        filename: 'bundle.js'
     },
 
     resolve: {
@@ -107,5 +107,5 @@ module.exports = {
         historyApiFallback: true
     },
 
-    watch: true
+    // watch: true
 };

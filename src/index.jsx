@@ -9,7 +9,7 @@ import configureStore from './store/store.js';
 
 const store = configureStore();
 
-ReactDom.render((
+ReactDom.hydrate((
     <Provider store={store}>
         <Router>
             <App>
